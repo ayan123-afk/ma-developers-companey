@@ -1,8 +1,7 @@
-import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Code2, Users, Award, Globe } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import AnimatedBackground from '../AnimatedBackground'
+import AnimatedBackground from './AnimatedBackground'
 import TypingText from '../TypingText'
 
 const stats = [
