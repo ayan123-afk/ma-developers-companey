@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #00f2fe, #a18cd1);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #a18cd1, #f093fb);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gray-900/40 backdrop-blur-xl border border-gray-800/50 rounded-2xl shadow-2xl;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3),
+                0 0 40px rgba(0, 242, 254, 0.1),
+                0 0 60px rgba(161, 140, 209, 0.2);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon-blue via-primary-400 to-neon-purple bg-clip-text text-transparent;
+  }
+
+  .gradient-btn {
+    @apply relative overflow-hidden bg-gradient-to-r from-neon-blue via-primary-500 to-neon-purple 
+           text-white font-semibold py-3 px-8 rounded-full 
+           hover:shadow-lg hover:scale-105 transition-all duration-300
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .gradient-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-neon-purple via-primary-500 to-neon-blue opacity-0 transition-opacity duration-300;
+  }
+
+  .gradient-btn:hover::before {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  .text-shadow-neon {
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5),
+                 0 0 20px rgba(0, 242, 254, 0.3),
+                 0 0 40px rgba(161, 140, 209, 0.3);
+  }
+}
